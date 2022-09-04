@@ -1,0 +1,82 @@
+{
+  "name": "helmix",
+  "displayName": "helmix",
+  "description": "Decrypt/encrypt your secrets with one click",
+  "version": "0.0.1",
+  "publisher": "karyan40024",
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/karyan40024/helmix"
+	},
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "icon": "images/helmix.png",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:helmix.decrypt",
+    "onCommand:helmix.encrypt"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "helmix.decrypt",
+        "title": "Helmix decrypt"
+      },
+      {
+        "command": "helmix.encrypt",
+        "title": "Helmix encrypt"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "helmix.decrypt",
+          "when": "resourceFilename =~  /^\\w.+.secrets.(yaml)$/"         
+        },
+        {
+          "command": "helmix.encrypt",
+          "when": "resourceFilename =~  /^\\w.+.secrets.(yaml|yaml.dec)$/"        
+        }
+      ],
+      "editor/title/context": [
+        {
+          "command": "helmix.decrypt"          
+        },
+        {
+          "command": "helmix.encrypt"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "dependencies": {
+    "fs-extra": "^5.0.0",
+    "lodash.escaperegexp": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/fs-extra": "5.0.1",
+    "@types/lodash.escaperegexp": "^4.1.3",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.20.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4",
+    "@vscode/test-electron": "^2.1.5"
+  }
+}
