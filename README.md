@@ -14,8 +14,4 @@ Following commands are available in vscode context menu:
 - Helmix decrypt
 - Helmix encrypt
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/31778860/188871256-cfdc4d4b-cafd-4319-a24f-7b01bda55a43.gif">
-</p>
-
 **Enjoy!**
