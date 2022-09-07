@@ -3,8 +3,6 @@ import * as path from 'path';
 
 import * as vscode from 'vscode';
 
-import * as filepaths from './managers/filepaths';
-
 /**
  * Open file after decrypt/encrypt.
  */
@@ -39,13 +37,22 @@ import * as filepaths from './managers/filepaths';
  async function helmixEncrypt(uri: vscode.Uri): Promise<vscode.TextEditor | undefined> {
 	const oldPath = uri.fsPath;
 	const oldPathParsed = path.parse(oldPath);
-	const oldPathStats = await fs.stat(oldPath);
+	const oldName = oldPathParsed.name;
+	const ext = ".dec";
 
-	const newName = oldPathParsed.name.replace(".dec", "");
-	const newPath = filepaths.buildFilepath(oldPathParsed, oldPathStats, newName);
+	const hasDecExtension = oldPathParsed.ext.endsWith(ext);
+	let newName = oldName.replace(ext, "");
+	
+	if (!hasDecExtension) {
+		newName += oldPathParsed.ext;
+	}
 
-	await fs.remove(newPath);
-	await fs.rename(oldPath, newPath);
+	const newPath = path.join(oldPathParsed.dir, newName);
+
+	if(hasDecExtension){
+		await fs.remove(newPath);
+		await fs.rename(oldPath, newPath);
+	}
 
 	const command = `helm secrets enc ${newPath}`;
 	if(vscode.window.terminals.length === 0){
