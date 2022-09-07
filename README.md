@@ -15,7 +15,7 @@ Following commands are available in vscode context menu:
 - Helmix encrypt
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/31778860/188383237-c06fff15-7afa-4a30-bcef-125025b6cbf4.gif">
+  <img src="https://user-images.githubusercontent.com/31778860/188871256-cfdc4d4b-cafd-4319-a24f-7b01bda55a43.gif">
 </p>
 
 **Enjoy!**
