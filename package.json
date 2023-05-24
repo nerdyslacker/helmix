@@ -2,11 +2,11 @@
   "name": "helmix",
   "displayName": "helmix",
   "description": "Decrypt/encrypt your secrets with one click",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "publisher": "karyan40024",
   "repository": {
 		"type": "git",
-		"url": "https://github.com/karyan40024/helmix"
+		"url": "https://github.com/nerdyslacker/helmix"
 	},
   "engines": {
     "vscode": "^1.60.0"
