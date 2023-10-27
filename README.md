@@ -7,7 +7,7 @@
 </p>
 
 ---
-This extension uses [jkroepke/helm-secrets](https://github.com/jkroepke/helm-secrets) helm plugin underneath.
+This extension uses [zendesk/helm-secrets](https://github.com/zendesk/helm-secrets) (Helmix) and [jkroepke/helm-secrets](https://github.com/jkroepke/helm-secrets) (Helmix2) helm plugin underneath.
 
 Following commands are available in vscode context menu:
 
