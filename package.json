@@ -1,8 +1,8 @@
 {
-  "name": "helmix",
-  "displayName": "helmix",
+  "name": "helmix2",
+  "displayName": "helmix2",
   "description": "Decrypt/encrypt your secrets with one click",
-  "version": "0.0.3",
+  "version": "0.0.1",
   "publisher": "karyan40024",
   "repository": {
 		"type": "git",

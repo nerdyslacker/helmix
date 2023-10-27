@@ -17,7 +17,7 @@ import * as vscode from 'vscode';
  */
  async function helmixDecrypt(uri: vscode.Uri): Promise<vscode.TextEditor | undefined> {
 	const filePath = uri.fsPath;
-	const command = `helm secrets dec ${filePath}`;
+	const command = `helm secrets decrypt -i ${filePath}`;
 	const ext = ".dec";
 	if(vscode.window.terminals.length === 0){
 		const newTerminal = vscode.window.createTerminal(`helmix terminal`);
@@ -55,7 +55,7 @@ import * as vscode from 'vscode';
 		await fs.rename(oldPath, newPath);
 	}
 
-	const command = `helm secrets enc ${newPath}`;
+	const command = `helm secrets encrypt -i ${newPath}`;
 	if(vscode.window.terminals.length === 0){
 		const newTerminal = vscode.window.createTerminal(`helmix terminal`);
 		newTerminal.show();
